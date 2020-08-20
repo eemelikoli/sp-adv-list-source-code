@@ -1,0 +1,88 @@
+<div id="title" class="col-xs-12" role="">
+    <h1>{{::options.title || "Hello there!"}}</h1>
+</div>
+
+<section id="errors" ng-if="data.error" class="col-xs-12">
+    <ul>
+        <li ng-repeat="error in data.errorMessages" class="alert alert-warning">
+            {{error}}
+        </li>
+    </ul>
+</section>
+
+<section id="controls" class="col-xs-12 form-inline" ng-if="c.displayControls">
+
+    <div class="form-group search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="c.searchInput"
+                ng-disabled="c.loading">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="c.search()"
+                    ng-disabled="c.loading">${search}</button>
+                <button class="btn btn-danger" type="button" ng-click="c.clearSearch()"
+                    ng-disabled="c.loading">${clear}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group form-inline sort">
+        <label for="sortingMenu">${sort_by_text}</label>
+        <select class="form-control" name="sortingMenu" id="sortingMenu"
+            ng-options="option as option.display for option in data.sortingOptions track by option.id"
+            ng-model="c.selectedSorting" ng-change="c.reload()" ng-disabled="c.loading">
+        </select>
+    </div>
+
+    <!-- REMOVE PAGINATION-->
+    <!--div class="col-xs-12">
+        <nav class="center-block" ng-if="c.maxPage > 0">
+            <ul class="pagination">
+                <li class="previous"><a href="#" ng-click="c.previousPage()" ng-if="c.currentPage != 0">Previous page</a></li>
+                <li ng-repeat="x in [].constructor(c.maxPage) track by $index"><a href="#"
+                        ng-click="c.goToPage($index)">{{$index + 1}}</a></li>
+                <li class="next"><a href="#" ng-click="c.nextPage()" ng-if="c.currentPage != c.maxPage">Next page</a></li>
+            </ul>
+        </nav>
+    </div-->
+
+    <!-- PURELY FOR DEVELOPMENT PURPOSES -->
+    <div class="col-xs-12">
+        <ul class="center-block">
+            <li>Total number of records is: {{c.data.totalNoRecords}}</li>
+        </ul>
+    </div>
+
+</section>
+
+<section id="item-list" class="col-xs-12">
+
+    <ul id=items>
+        <li class="panel panel-default" ng-repeat="item in c.items">
+            <a class="panel-body item-body" ng-href="{{c.generateURL(item.url)}}">
+
+                <!-- if icon is available we'll show that and the class name of item -->
+                <div ng-if="item.icon !== null && item.icon !== undefined" class="item-type">
+                    <div class="fa fa-2x" ng-class="'fa-' + item.icon"></div>
+                    <small class="text-muted">{{value.sys_class_name}}</small>
+                </div>
+
+                <!-- template provided in list source definition -->
+                <div ng-include="item.templateID" class="item-content"></div>
+
+                <!-- using the back-up list template on when no template is provided -->
+                <div ng-if="data.listTemplates[item.templateID] == null">
+                    <h3>{{item.title}}</h3>
+                    <p ng-repeat="field in item.primary_fields">{{field.display_value}}</p>
+                </div>
+
+            </a>
+        </li>
+    </ul>
+
+</section>
+
+<section>
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-default center-block" ng-disabled="c.loading" aria-label="${loadMoreItems}" ng-click="c.loadMore()">${loadMoreItems}</button>
+    </div>
+</section>
