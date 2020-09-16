@@ -1,0 +1,14 @@
+{
+	"list_sources": {
+		"value": "d6cbf5d81b031010f480fc86cc4bcb11,4129ce6c1b031010f480fc86cc4bcb3e,94dc78111b831010f480fc86cc4bcbd4",
+		"displayValue": "Incident by current user, Incidents by Fred Luddy, test"
+	},
+	"title": {
+		"value": "This is a test title",
+		"displayValue": "This is a test title"
+	},
+	"hide_title": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}

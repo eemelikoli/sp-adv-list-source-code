@@ -1,0 +1,110 @@
+{
+  "Service Portal": {
+    "Widget Angular Providers": {
+      "sortService": {
+        "sys_id": "eef73da01b031010f480fc86cc4bcb28",
+        "SYS_PACKAGE": "09a2f2811b021010f480fc86cc4bcbf0",
+        "packageName": "SP Advanced List",
+        "scopeId": "09a2f2811b021010f480fc86cc4bcbf0",
+        "scopeName": "SP Advanced List",
+        "scopeValue": "x_207729_adv_list",
+        "SERVER_MOD_TIME": 1598939015000,
+        "CURRENT_SERVER_MOD_TIME": 1598939015000,
+        "LOCAL_MOD_TIME": 1598949778391,
+        "CURRENT_LOCAL_MOD_TIME": 1598949778391,
+        "localCopyExists": true,
+        "serverCopyExists": false,
+        "sys_updated_on": "2020-09-01 08:43:35",
+        "lastmodified": 1598949815386,
+        "LIVE": true,
+        "UNCHANGED": true
+      }
+    }
+  },
+  "Client Development": {
+    "Client Scripts": {
+      "Validate ID on submit": {
+        "sys_id": "86f4341d1b431010f480fc86cc4bcb2b",
+        "SYS_PACKAGE": "09a2f2811b021010f480fc86cc4bcbf0",
+        "packageName": "SP Advanced List",
+        "scopeId": "09a2f2811b021010f480fc86cc4bcbf0",
+        "scopeName": "SP Advanced List",
+        "scopeValue": "x_207729_adv_list",
+        "SERVER_MOD_TIME": 1599123056000,
+        "CURRENT_SERVER_MOD_TIME": 1599123056000,
+        "LOCAL_MOD_TIME": 1599134759862,
+        "CURRENT_LOCAL_MOD_TIME": 1599134759862,
+        "localCopyExists": true,
+        "serverCopyExists": false,
+        "sys_updated_on": "2020-09-03 11:50:56",
+        "lastmodified": 1599135645922,
+        "LIVE": true,
+        "UNCHANGED": true
+      },
+      "Validate URL on submit": {
+        "sys_id": "33eeea281b831010f480fc86cc4bcbd7",
+        "SYS_PACKAGE": "09a2f2811b021010f480fc86cc4bcbf0",
+        "packageName": "SP Advanced List",
+        "scopeId": "09a2f2811b021010f480fc86cc4bcbf0",
+        "scopeName": "SP Advanced List",
+        "scopeValue": "x_207729_adv_list",
+        "SERVER_MOD_TIME": 1599123067000,
+        "CURRENT_SERVER_MOD_TIME": 1599123067000,
+        "LOCAL_MOD_TIME": 1599133859463,
+        "CURRENT_LOCAL_MOD_TIME": 1599133859463,
+        "localCopyExists": true,
+        "serverCopyExists": false,
+        "sys_updated_on": "2020-09-03 11:51:07",
+        "lastmodified": 1599133868004,
+        "LIVE": true,
+        "UNCHANGED": true
+      },
+      "Set Default Template": {
+        "sys_id": "d0ffcf5e7f5132005f58108c3ffa911d",
+        "SYS_PACKAGE": "f4e86e801b311010f480fc86cc4bcbf5",
+        "packageName": "Subscription Based Notifications",
+        "scopeId": "global",
+        "scopeName": "Global",
+        "scopeValue": "global",
+        "SERVER_MOD_TIME": 1488914800000,
+        "CURRENT_SERVER_MOD_TIME": 1488914800000,
+        "LOCAL_MOD_TIME": 1599134340829,
+        "CURRENT_LOCAL_MOD_TIME": 1599134340829,
+        "localCopyExists": true,
+        "serverCopyExists": false
+      },
+      "Set Default Script": {
+        "sys_id": "d6c1e9e66721220023c82e08f585ef64",
+        "SYS_PACKAGE": "28b0f24c1b351010f480fc86cc4bcb53",
+        "packageName": "Service Portal - Core",
+        "scopeId": "global",
+        "scopeName": "Global",
+        "scopeValue": "global",
+        "SERVER_MOD_TIME": 1539258390000,
+        "CURRENT_SERVER_MOD_TIME": 1539258390000,
+        "LOCAL_MOD_TIME": 1599134876051,
+        "CURRENT_LOCAL_MOD_TIME": 1599134876051,
+        "localCopyExists": true,
+        "serverCopyExists": false
+      },
+      "Set list default list item template": {
+        "sys_id": "17beb8911b831010f480fc86cc4bcb64",
+        "SYS_PACKAGE": "09a2f2811b021010f480fc86cc4bcbf0",
+        "packageName": "SP Advanced List",
+        "scopeId": "09a2f2811b021010f480fc86cc4bcbf0",
+        "scopeName": "SP Advanced List",
+        "scopeValue": "x_207729_adv_list",
+        "SERVER_MOD_TIME": 1599124845000,
+        "CURRENT_SERVER_MOD_TIME": 1599124845000,
+        "LOCAL_MOD_TIME": 1599135639653,
+        "CURRENT_LOCAL_MOD_TIME": 1599135639653,
+        "localCopyExists": true,
+        "serverCopyExists": false,
+        "sys_updated_on": "2020-09-03 12:20:45",
+        "lastmodified": 1599135645970,
+        "LIVE": true,
+        "UNCHANGED": true
+      }
+    }
+  }
+}
