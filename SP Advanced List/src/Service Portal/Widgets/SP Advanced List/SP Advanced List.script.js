@@ -246,17 +246,20 @@ function generateURL(record, urlObj) {
   for (var key in parms) {
     if (parms.hasOwnProperty(key)) {
       var parm = parms[key],
+          type = parm.split('.')[0],
+          field = parm.split('.')[1],
           value = "";
-      if(parm.split('.')[0] === 'record'){
-        value = record[parm];
+
+      if(type === 'record'){
+        value = record[field];
       }
-      if(parm.split('.')[0] === 'field'){
-        value = record.link_fields[parm];
+      if(type === 'field'){
+        value = record.link_fields[field];
       }
       if (value === "") {
         value = parm;
       }
-      url.parms[key] = value;
+      url.parms[key] = value.toLowerCase();
     }
   }
 

@@ -45,6 +45,7 @@ function advancedListController($location, $httpParamSerializer, sortService) {
 
 
 	c.generateLink = function (urlObj) {
+		console.log(urlObj);
 		var url = "",
 			serializedParams = $httpParamSerializer(urlObj.parms);
 

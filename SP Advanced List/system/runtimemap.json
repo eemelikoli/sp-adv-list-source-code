@@ -352,14 +352,14 @@
     "Widgets": {
       "SP Advanced List": {
         "sys_id": "d27abec91b021010f480fc86cc4bcbb4",
-        "sys_updated_on": "2020-09-16 12:32:45",
-        "SERVER_MOD_TIME": 1600248765000,
-        "LOCAL_MOD_TIME": 1600259561781,
-        "CURRENT_LOCAL_MOD_TIME": 1600259561781,
-        "CURRENT_SERVER_MOD_TIME": 1600248765000,
+        "sys_updated_on": "2020-09-16 12:58:49",
+        "SERVER_MOD_TIME": 1600250329000,
+        "LOCAL_MOD_TIME": 1600261128068,
+        "CURRENT_LOCAL_MOD_TIME": 1600261128068,
+        "CURRENT_SERVER_MOD_TIME": 1600250329000,
         "LIVE": true,
         "UNCHANGED": true,
-        "lastmodified": 1600259565935
+        "lastmodified": 1600261130144
       }
     },
     "Service Portal Pages": {

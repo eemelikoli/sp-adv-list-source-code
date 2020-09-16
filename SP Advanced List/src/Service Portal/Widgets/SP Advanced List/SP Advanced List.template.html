@@ -35,14 +35,9 @@
 </section>
 
 <section id="item-list" class="col-xs-12">
-
-    <div ng-if="c.noResults" class="text-center">
-        <h3>${noResultsText}</h3>
-    </div>
-
     <ul id=items ng-if="!c.noResults">
         <li class="panel panel-default" ng-repeat="item in c.items">
-            <a class="panel-body item-body" ng-href="{{c.generateURL(item.url)}}">
+            <a class="panel-body item-body" ng-href="{{c.generateLink(item.url)}}">
 
                 <!-- if icon is available we'll show that and the class name of item -->
                 <div ng-if="item.icon !== null && item.icon !== undefined" class="item-type">
@@ -62,6 +57,10 @@
             </a>
         </li>
     </ul>
+
+    <div ng-if="c.noResults" class="text-center">
+        <h3>${noResultsText}</h3>
+    </div>
 
 </section>
 
