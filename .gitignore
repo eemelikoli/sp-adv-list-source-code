@@ -2,9 +2,11 @@ node_modules
 lib
 system
 package-lock.json
+package.json
 tsconfig.json
+.DS_Store
 .vscode
-**/backgroud scripts
+**/background scripts
 **/scratch
 **/src/Access Control
 **/src/Client Development
