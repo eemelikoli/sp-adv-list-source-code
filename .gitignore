@@ -3,6 +3,7 @@ lib
 system
 package-lock.json
 tsconfig.json
+.vscode
 **/backgroud scripts
 **/scratch
 **/src/Access Control
