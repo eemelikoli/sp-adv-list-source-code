@@ -94,7 +94,7 @@ function advancedListController($location, $httpParamSerializer, sortService) {
 		c.server.get(i).then(function (response) {
 			var r = response.data;
 			// when we move to another page and we have cached items, push them to results array
-			if (c.cache.length > 0) {
+			if (c.cache && c.cache.length > 0) {
 				r.results.push(c.cache);
 				c.cache = [];
 			}
@@ -106,7 +106,7 @@ function advancedListController($location, $httpParamSerializer, sortService) {
 
 
 	function formList(results, pageSize, addItems) {
-		if (results.length < pageSize) {
+		if (results.length <= pageSize) {
 			c.noMoreResults = true;
 		}
 		if (results.length > pageSize) {

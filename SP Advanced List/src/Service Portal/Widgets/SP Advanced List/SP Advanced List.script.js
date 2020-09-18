@@ -91,7 +91,10 @@
 
 
   function load(opt) {
-    var sources = opt.initializedSources;
+    var sources = opt.initializedSources.filter(function(source){
+      return source !== null && source !== undefined;
+    });
+
     if (!sources) {
       errorMsgProvider("configuration");
       return;
@@ -109,19 +112,18 @@
       };
     });
 
-    data.souceQueries = sourceQueries;
-
-    // clean null queries and 0 result queries
+    // clean null and 0 result queries
     var validQueries = sourceQueries.filter(function (query) {
       return query.glideRecord !== null && query.noRecords > 0;
     });
 
-    //fetch available records from valid sources
+    //fetch available records from valid queries
     var results = validQueries.map(function (query) {
       return getRecords(query.glideRecord, query.source);
     });
 
     data.results = results;
+    data.souceQueries = sourceQueries;
     data.initializedSources = opt.initializedSources;
     data.searchTerm = opt.searchTerm;
     data.pageSize = pageSize;
@@ -212,9 +214,9 @@ function getRecords(query, source) {
     var record = {},
       title = {};
     $sp.getRecordDisplayValues(title, query, t.title_field);
-
     record = {
       sys_id: query.getValue("sys_id"), //get sys_id for every record
+      table: t.table, //add table for every record
       sys_created_on: query.getValue("sys_created_on"), // sorting
       sys_updated_on: query.getValue("sys_updated_on"), // sorting
       sys_class_name: query.getDisplayValue("sys_class_name"), // display below icon
