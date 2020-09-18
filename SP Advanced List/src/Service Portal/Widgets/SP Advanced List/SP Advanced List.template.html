@@ -10,7 +10,7 @@
     </ul>
 </section>
 
-<section id="controls" class="col-xs-12 form-inline" ng-if="c.displayControls">
+<section id="controls" class="col-xs-12 form-inline" ng-if="c.displayControls && !c.noResults">
 
     <div class="form-group search">
         <div class="input-group">
@@ -42,7 +42,7 @@
                 <!-- if icon is available we'll show that and the class name of item -->
                 <div ng-if="item.icon !== null && item.icon !== undefined" class="item-type">
                     <div class="fa fa-2x" ng-class="'fa-' + item.icon"></div>
-                    <small class="text-muted">{{item.sys_class_name}}</small>
+                    <small class="text-muted text-center">{{item.sys_class_name}}</small>
                 </div>
 
                 <!-- template provided in list source definition -->
@@ -64,7 +64,7 @@
 
 </section>
 
-<section ng-if="c.displayControls">
+<section ng-if="c.displayControls && !c.noResults">
     <div ng-if="!c.noMoreResults" class="col-xs-12">
         <button type="button" class="btn btn-default center-block" ng-disabled="c.loading" aria-label="${loadMoreItems}"
             ng-click="c.loadMore()">${loadMoreItems}</button>

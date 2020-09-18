@@ -41,9 +41,6 @@
 	}
 }
 
-#items {
-	display: block;
-}
 
 #item-list,
 #errors,
@@ -52,9 +49,11 @@
 
 	ul {
 		list-style: none;
+		padding: 0;
 	}
 
 	#items {
+		display: block;
 		padding: 0;
 	}
 }
@@ -77,6 +76,7 @@
 	.item-content {
 		flex: 2 0 92%;
 		flex-wrap: wrap;
+		padding-left: 10px;
 
 		.item-title {
 			flex: 1 0 100%;
@@ -109,6 +109,7 @@
 
 	.item-body .item-content {
 		text-align: center;
+		padding: 0;
 
 		.item-title,
 		.primary-content,

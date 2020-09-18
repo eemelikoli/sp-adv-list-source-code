@@ -50,7 +50,7 @@
 
   var initializedSources = [],
     pageSize = 10; // TODO: allow page size to be set in instanse options
-    data.sortOptions = SORT_OPTIONS;
+  data.sortOptions = SORT_OPTIONS;
 
   // in order to keep the options beyond initial load we need to pass them to data object
   if (options) {
@@ -87,6 +87,9 @@
     load(grOptions);
   }
 
+
+
+
   function load(opt) {
     var sources = opt.initializedSources;
     if (!sources) {
@@ -106,6 +109,8 @@
       };
     });
 
+    data.souceQueries = sourceQueries;
+
     // clean null queries and 0 result queries
     var validQueries = sourceQueries.filter(function (query) {
       return query.glideRecord !== null && query.noRecords > 0;
@@ -122,6 +127,8 @@
     data.pageSize = pageSize;
   }
 })();
+
+
 
 function initializeListSources(
   listSources,
@@ -148,6 +155,13 @@ function initializeListSources(
     data.listTemplates["sp-template-" + t.id + ".html"] = $sp.translateTemplate(
       t.item_template
     ); //using undocumented ServiceNow function to generate the list templates from record data
+
+    if (t.type === 'page') {
+      var pageGr = new GlideRecord("sp_page");
+      pageGr.get(t.page);
+      t.pageID = pageGr.getValue("id");
+    }
+
     return t;
   });
   return sourceConfigs;
@@ -186,6 +200,7 @@ function generateGliderecord(table, filter, o) {
 }
 
 
+
 function getRecords(query, source) {
   var records = [],
     t = source;
@@ -220,6 +235,7 @@ function getRecords(query, source) {
     record.url = generateURL(record, {
       type: t.type,
       page: t.page,
+      pageID: t.pageID,
       base_url: t.link_url,
       parms: t.link_parameters,
     });
@@ -227,6 +243,8 @@ function getRecords(query, source) {
   }
   return records;
 }
+
+
 
 function generateURL(record, urlObj) {
   var parms = JSON.parse(urlObj.parms);
@@ -238,22 +256,20 @@ function generateURL(record, urlObj) {
 
   // TODO: Move the page query to be done when list sources are initialized to reduce the number of queries
   if (urlObj.type === "page") {
-    var pageGr = new GlideRecord("sp_page");
-    pageGr.get(urlObj.page);
-    url.parms.id = pageGr.getValue("id");
+    url.parms.id = urlObj.pageID;
   }
 
   for (var key in parms) {
     if (parms.hasOwnProperty(key)) {
       var parm = parms[key],
-          type = parm.split('.')[0],
-          field = parm.split('.')[1],
-          value = "";
+        type = parm.split('.')[0],
+        field = parm.split('.')[1],
+        value = "";
 
-      if(type === 'record'){
+      if (type === 'record') {
         value = record[field];
       }
-      if(type === 'field'){
+      if (type === 'field') {
         value = record.link_fields[field];
       }
       if (value === "") {
