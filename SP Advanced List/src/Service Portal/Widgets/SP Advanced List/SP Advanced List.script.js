@@ -1,22 +1,7 @@
 (function () {
   // CONSTANTS
   var LIST_SOURCE_TABLE = "x_207729_adv_list_item_definition",
-    CONFIG_FIELDS = [
-      "active",
-      "table",
-      "id",
-      "title_field",
-      "primary_fields",
-      "secondary_fields",
-      "link_fields",
-      "filter",
-      "item_icon",
-      "item_template",
-      "type",
-      "link_url",
-      "link_parameters",
-      "page"
-    ],
+    CONFIG_FIELDS = $sp.getListColumns(LIST_SOURCE_TABLE,'widgetconfig').split(','),
     // TODO?: Move search and sorting logic to it's own widget
     SORT_OPTIONS = [{
         id: 1,
@@ -47,6 +32,7 @@
         type: "date"
       }
     ];
+
 
   var initializedSources = [],
     pageSize = 10; // TODO: allow page size to be set in instanse options

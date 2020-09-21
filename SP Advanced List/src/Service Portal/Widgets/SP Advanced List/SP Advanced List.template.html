@@ -1,20 +1,20 @@
-<div id="title" class="col-xs-12" role="" ng-if="::options.hide_title === 'false'">
+<div id="title" class="col-xs-12" ng-if="::options.hide_title === 'false'">
     <h1>{{::options.title || "Hello there!"}}</h1>
 </div>
 
-<section id="errors" ng-if="data.error" class="col-xs-12">
+<section id="errors" aria-label="Error messages" ng-if="data.error" class="col-xs-12">
     <ul>
-        <li ng-repeat="error in data.errorMessages" class="alert alert-warning">
+        <li ng-repeat="error in data.errorMessages" class="alert alert-warning" role="alert">
             {{error}}
         </li>
     </ul>
 </section>
 
-<section id="controls" class="col-xs-12 form-inline" ng-if="c.displayControls && !c.noResults">
+<section id="controls" aria-label="List search and sort controls" class="col-xs-12 form-inline" ng-if="c.displayControls">
 
-    <div class="form-group search">
+    <div class="form-group search" role="search">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." ng-model="c.searchInput"
+            <input type="search" aria-label="Search text" class="form-control" placeholder="Search for..." ng-model="c.searchInput"
                 ng-disabled="c.loading">
             <div class="input-group-btn">
                 <button class="btn btn-default" type="button" ng-click="c.search()"
@@ -34,7 +34,7 @@
     </div>
 </section>
 
-<section id="item-list" class="col-xs-12">
+<section id="item-list" aria-label="Item list" class="col-xs-12">
     <ul id=items ng-if="!c.noResults">
         <li class="panel panel-default" ng-repeat="item in c.items">
             <a class="panel-body item-body" ng-href="{{c.generateLink(item.url)}}">
@@ -58,15 +58,13 @@
         </li>
     </ul>
 
-    <div ng-if="c.noResults" class="text-center">
+    <div ng-if="c.noResults" class="text-center" aria-label="">
         <h3>${noResultsText}</h3>
     </div>
 
 </section>
 
-<section ng-if="c.displayControls && !c.noResults">
-    <div ng-if="!c.noMoreResults" class="col-xs-12">
-        <button type="button" class="btn btn-default center-block" ng-disabled="c.loading" aria-label="${loadMoreItems}"
+<section ng-if="c.displayControls && !c.noResults" aria-label="Load more list items" class="col-xs-12">
+        <button type="button" ng-if="!c.noMoreResults" class="btn btn-default center-block" ng-disabled="c.loading" aria-label="${loadMoreItems}"
             ng-click="c.loadMore()">${loadMoreItems}</button>
-    </div>
 </section>
