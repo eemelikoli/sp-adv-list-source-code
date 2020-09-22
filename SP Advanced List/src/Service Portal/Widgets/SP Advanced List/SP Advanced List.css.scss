@@ -61,6 +61,10 @@
 	#items {
 		display: block;
 		padding: 0;
+
+		.list-item:hover {
+			background-color: $gray-lighter;
+		}
 	}
 }
 

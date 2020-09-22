@@ -36,7 +36,7 @@
 
 <section id="item-list" aria-label="Item list" class="col-xs-12">
     <ul id=items ng-if="!c.noResults">
-        <li class="panel panel-default" ng-repeat="item in c.items">
+        <li class="panel panel-default list-item" ng-repeat="item in c.items">
             <a class="panel-body item-body" ng-href="{{c.generateLink(item.url)}}">
 
                 <!-- if icon is available we'll show that and the class name of item -->
